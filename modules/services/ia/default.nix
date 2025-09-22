@@ -4,4 +4,8 @@
   imports = [
     ./ollama.nix
   ];
+
+  environment.systemPackages = with pkgs; [
+    claude-code
+  ];
 }

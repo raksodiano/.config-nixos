@@ -14,6 +14,9 @@
     # IDEs
     jetbrains.webstorm
 
+    # ApiRest test
+    insomnia
+
     # Go toolchain
     go
     gopls
