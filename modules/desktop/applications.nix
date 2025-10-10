@@ -22,7 +22,13 @@
     # gammastep
 
     # VPN
-    # mullvad-vpn
+    openssl
+    openvpn
+    openvpn3
+    strongswan
+    networkmanager_strongswan
+    networkmanager-openvpn
+    kdePackages.krdc
 
     # Others
     syncthing

@@ -8,12 +8,12 @@
 \usepackage{amsmath}
 \usepackage{ifxetex}
 \ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \setsansfont{DejaVu Sans}
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \setsansfont{DejaVu Sans}
 \else
-  \usepackage[mathletters]{ucs}
-  \usepackage[utf8x]{inputenc}
+  \usepackage[mathletters]{ucs}
+  \usepackage[utf8x]{inputenc}
 \fi
 \usepackage{url}
 \usepackage{paralist}
@@ -36,7 +36,7 @@
 \definecolor{secondcolor}{HTML}{DD3E74}
 \definecolor{periodblue}{HTML}{12239e}
 \definecolor{denimblue}{HTML}{3A5F90}
-\definecolor{electricblue}{HTML}{05ADF3}
+\definecolor{electricblue}{HTML}{05ADF3} % El color objetivo: #05ADF3
 
 \newtoks\leftheader
 \newtoks\leftheaderurl
@@ -53,7 +53,7 @@
 \hyphenpenalty=5000
 \tolerance=1000
 
-%This macro is to make cleaner the specification of the titling font
+% Se han modificado las definiciones de fuente para usar SIEMPRE electricblue
 \newfontfamily\mytitlefont[Color={electricblue}]{DejaVu Sans Bold}
 \newfontfamily\myauthorfont[Color={electricblue}]{DejaVu Sans Bold}
 \newfontfamily\mybluefont[Color=electricblue]{DejaVu Sans Bold}
@@ -64,6 +64,9 @@
 
 \pagenumbering{arabic}
 \makeatletter
+
+%This macro is to make cleaner the specification of the titling font
+%... (El resto del código de BackgroundPic no necesita cambios, ya usa \color{electricblue})
 
 %This macro now controls the position of the background pic
 %Please do not change from here
@@ -77,12 +80,12 @@
 
 \node [inner sep=0pt,outer sep=0pt] at (0,0) {\includegraphics[width=\paperwidth,height=\paperheight]{\the\coverimage}};
 
-\node at  (0,5) [opacity=1.0] {\parbox[b][0.5\textheight]{\textwidth}{%
-  \begin{raggedright}
-  \leavevmode
-    \vskip 1cm
-  {\mytitlefont\fontsize{45}{35}\bfseries{\@title}\par}
-    \vskip 1cm
+\node at  (0,5) [opacity=1.0] {\parbox[b][0.5\textheight]{\textwidth}{%
+  \begin{raggedright}
+  \leavevmode
+    \vskip 1cm
+  {\mytitlefont\fontsize{45}{35}\bfseries{\@title}\par}
+    \vskip 1cm
 
 \vfill
 \end{raggedright}}};
@@ -90,27 +93,27 @@
 \node at (0,-8) [opacity=1] {\parbox[b][0.3\textheight]{\textwidth}{%
 \begin{raggedright}
 \vfill
-% Fuerza color azul para todo el bloque
+% Fuerza color azul para todo el bloque de información de autor/pie de página
 \color{electricblue}
 
 % Autor (solo si se define)
 \ifdefvoid{\@author}{}{
-    {\myauthorfont\Large\bfseries{\@author}}\newline
+    {\myauthorfont\Large\bfseries{\@author}}\newline
 }
 
 % Email (solo si se define)
 \ifdefvoid{\the\customemail}{}{
-    {\myauthorfont\Large \href{mailto:\the\customemail}{\the\customemail}}\newline
+    {\myauthorfont\Large \href{mailto:\the\customemail}{\the\customemail}}\newline
 }
 
 % Confidencial (solo si se define)
 \ifdefvoid{\the\customconfidential}{}{
-    {\myauthorfont\Large \the\customconfidential}\newline
+    {\myauthorfont\Large \the\customconfidential}\newline
 }
 
 % Distribución (solo si se define)
 \ifdefvoid{\the\customdistribution}{}{
-    {\myauthorfont\Large \the\customdistribution}\newline
+    {\myauthorfont\Large \the\customdistribution}\newline
 }
 
 \end{raggedright}
@@ -120,7 +123,7 @@
 %Don't change
 \vfill
 }}}
-%This macro executes a hook at the beginning of the document that  puts the background correctly.
+%This macro executes a hook at the beginning of the document that  puts the background correctly.
 \AtBeginDocument{\AddToShipoutPicture*{\BackgroundPic}}
 \AtBeginDocument{\globalcolor{ghostlygrey}}
 
@@ -132,6 +135,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+% Los encabezados y pies de página ya usan electricblue por defecto en los enlaces, pero lo confirmamos:
 \lhead{\href{\the\leftheaderurl}{\the\leftheader}}
 \chead{}
 \rhead{{\nouppercase{\leftmark}}}
@@ -144,24 +148,24 @@
 \setlength{\parskip}{12pt plus 2pt minus 1pt} % space between paragraphs
 
 % spacing: how to read {12pt plus 4pt minus 2pt}
-%           12pt is what we would like the spacing to be
-%           plus 4pt means that TeX can stretch it by at most 4pt
-%           minus 2pt means that TeX can shrink it by at most 2pt
-%       This is one example of the concept of, 'glue', in TeX
+%           12pt is what we would like the spacing to be
+%           plus 4pt means that TeX can stretch it by at most 4pt
+%           minus 2pt means that TeX can shrink it by at most 2pt
+%       This is one example of the concept of, 'glue', in TeX
 
 \usepackage{fancyvrb}
 \usepackage{enumerate}
 \usepackage{ctable}
 \setlength{\paperwidth}{8.5in}
 \setlength{\paperheight}{11in}
-  \tolerance=1000
+  \tolerance=1000
 \usepackage{tocloft}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \usepackage[normalem]{ulem}
 
 \makeatletter
 \newcommand{\globalcolor}[1]{%
-  \color{#1}\global\let\default@color\current@color
+  \color{#1}\global\let\default@color\current@color
 }
 \makeatother
 
@@ -175,17 +179,6 @@
 \setlist{noitemsep, topsep=-8pt, after=\vspace{12pt}} % for no spacing between list items
 % see: https://tex.stackexchange.com/questions/199118/modifying-whitespace-before-and-after-list-separately-using-enumitem-package
 %\setlist{topsep=0pt} % for a line between list items
-
-% \renewcommand{\labelitemi}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemii}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemiii}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemiv}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemv}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemvi}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemvii}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemviii}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemix}{\raise 0.25ex\hbox{\tiny$\bullet$}}
-% \renewcommand{\labelitemx}{\raise 0.25ex\hbox{\tiny$\bullet$}}
 
 \setlistdepth{10}
 \setlist[itemize,1]{label=\raise 0.25ex\hbox\tiny$\bullet$}
@@ -208,33 +201,33 @@
 \makeatletter
 
 \tikzset{%
-  fancy quotes/.style={
-    text width=\fq@width pt,
-    align=justify,
-    inner sep=1em,
-    anchor=north west,
-    minimum width=\linewidth,
-  },
-  fancy quotes width/.initial={.8\linewidth},
-  fancy quotes marks/.style={
-    scale=8,
-    text=black,
-    inner sep=0pt,
-  },
-  fancy quotes opening/.style={
-    fancy quotes marks,
-  },
-  fancy quotes closing/.style={
-    fancy quotes marks,
-  },
-  fancy quotes background/.style={
-    show background rectangle,
-    inner frame xsep=0pt,
-    background rectangle/.style={
-      fill=azure,
-      rounded corners,
-    },
-  }
+  fancy quotes/.style={
+    text width=\fq@width pt,
+    align=justify,
+    inner sep=1em,
+    anchor=north west,
+    minimum width=\linewidth,
+  },
+  fancy quotes width/.initial={.8\linewidth},
+  fancy quotes marks/.style={
+    scale=8,
+    text=black,
+    inner sep=0pt,
+  },
+  fancy quotes opening/.style={
+    fancy quotes marks,
+  },
+  fancy quotes closing/.style={
+    fancy quotes marks,
+  },
+  fancy quotes background/.style={
+    show background rectangle,
+    inner frame xsep=0pt,
+    background rectangle/.style={
+      fill=azure,
+      rounded corners,
+    },
+  }
 }
 
 \newenvironment{fancyquotes}[1][]{%
@@ -261,10 +254,13 @@
 \titlespacing*{\subsection}{0pt}{0pt}{-6pt}
 \titlespacing*{\subsubsection}{0pt}{6pt}{-6pt}
 
-\titleformat*{\section}{\sffamily\fontsize{36}{36}\raggedright\bfseries\sffamily\color{pinterestred}}
+% Se han modificado los colores de titulación para usar SIEMPRE electricblue
+\titleformat*{\section}{\sffamily\fontsize{36}{36}\raggedright\bfseries\sffamily\color{electricblue}}
 \titleformat*{\subsection}{\sffamily\fontsize{20}{20}\scshape\color{electricblue}}
-\titleformat*{\subsubsection}{\sffamily\fontsize{16}{12}\raggedright\bfseries\color{pinterestred}}
+\titleformat*{\subsubsection}{\sffamily\fontsize{16}{12}\raggedright\bfseries\color{electricblue}}
 \titleformat*{\paragraph}{\sffamily\sanssize\raggedright\bfseries\rmfamily\color{electricblue}}
-\titleformat*{\subparagraph}{\sffamily\fontsize{14}{14}\raggedright\bfseries\ttfamily\color{pinterestred}}
+\titleformat*{\subparagraph}{\sffamily\fontsize{14}{14}\raggedright\bfseries\ttfamily\color{electricblue}}
+
+% Se ha modificado el setup de hyperref para usar SIEMPRE electricblue en todos los enlaces
 \usepackage[breaklinks=true,linktocpage,xetex]{hyperref}
 \hypersetup{colorlinks, citecolor=electricblue,filecolor=electricblue,linkcolor=electricblue,urlcolor=electricblue}
