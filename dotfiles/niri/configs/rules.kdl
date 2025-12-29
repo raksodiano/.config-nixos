@@ -1,13 +1,13 @@
-workspace "🌍 WWW" 
-workspace "🖳 TERM"
-workspace "🗒️ JOT"
-workspace "𝓔 EMACS"
-workspace "📦 MISC"
-workspace "📂 FILE"
-workspace "✎ NOTE"
-workspace "♫ SONG"
-workspace "💬 CHAT"
-workspace "🎮 GAME"
+workspace "I" 
+workspace "II"
+workspace "III"
+workspace "IV"
+workspace "V"
+workspace "VI"
+workspace "VII"
+workspace "VIII"
+workspace "IX"
+workspace "X"
 
 /*
 [[ Layer Rule ]]
@@ -110,11 +110,6 @@ window-rule {
     }
 }
 
-window-rule {
-    // match app-id="com.github.th_ch.youtube_music" 
-    // default-floating-position x=95 y=30 
-}
-
 // Needed for steam, read wiki for more
 window-rule {
     match app-id="steam" title="^notificationtoasts_\\d+_desktop$"
@@ -126,9 +121,6 @@ window-rule {
     match app-id="org.telegram.desktop$"
     match app-id="pcmanfm$"
     match app-id="Insomnia"
-    // match app-id="obsidian$"
-    // match app-id="Spotify"
-    // match app-id="Element"
     match app-id="emacs$"
     match app-id="steam"
     match app-id="brave"
@@ -142,7 +134,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
@@ -153,75 +145,5 @@ window-rule {
     draw-border-with-background false
     match app-id="kitty$"
     match app-id="com.mitchellh.ghostty$"
-    opacity 0.70
-}
-
-window-rule {
-    match app-id="brave$"
-    match app-id="firefox$"
-    open-on-workspace "🌍 WWW"
-}
-
-window-rule {
-    match app-id="codium$"
-    match app-id="Antigravity$"
-    match app-id="Insomnia$"
-    open-on-workspace "🖳 TERM"
-}
-
-window-rule {
-    match app-id="emacs$"
-    open-on-workspace "𝓔 EMACS"
-}
-
-window-rule {
-    match title="EMACS NOTES"
-    match title="EMACS PASS"
-    open-on-workspace "✎ NOTE"
-}
-
-window-rule {
-    match title="EMACS FEEDS"
-    open-on-workspace "🌍 WWW"
-}
-
-window-rule {
-    match title="EMACS AI"
-    open-on-workspace "💬 CHAT"
-}
-
-window-rule {
-    match title="EMACS MUSIC"
-    open-on-workspace "♫ SONG"
-}
-
-window-rule {
-    match title="EMACS CALENDAR"
-    open-on-workspace "🗒️ JOT"
-}
-
-window-rule {
-    match app-id="^pcmanfm$"
-    open-on-workspace "📂 FILE"
-}
-
-window-rule {
-    // match app-id="^obsidian$"
-    // open-on-workspace "✎ NOTE"
-}
-
-window-rule {
-    // match app-id="Spotify"
-    // open-on-workspace "♫ SONG"
-}
-
-window-rule {
-    match app-id="^Slack$"
-    match app-id="^org.telegram.desktop$"
-    open-on-workspace "💬 CHAT"
-}
-
-window-rule {
-    match app-id="steam"
-    open-on-workspace "🎮 GAME"
+    opacity 0.80
 }

@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
+
 {
   imports = [
-    ./kde.nix
+    ./de/kde.nix
+    # ./wm/niri
     ./fonts.nix
     ./audio.nix
     ./bluetooth.nix

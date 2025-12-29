@@ -9,7 +9,6 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  # services.xserver.videoDrivers = [ "modesetting" ];
   services.xserver.excludePackages = with pkgs; [
     xterm
   ];
@@ -25,9 +24,6 @@
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
-    # plasma-browser-integration
-    # kdepim-runtime
-    # oxygen
   ];
 
   environment.systemPackages = with pkgs; [
