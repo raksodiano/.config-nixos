@@ -1,0 +1,92 @@
+#+title: Raksodiano Nix Configuration
+
+[[https://nixos.org][https://img.shields.io/badge/NixOS-25.11-blue.svg?style=flat-square&logo=NixOS&logoColor=white]]
+
+#+BEGIN_QUOTE
+*Disclaimer:* Learning NixOS one configuration at a time. Take this with a grain of salt, but it works for me!
+#+END_QUOTE
+
+
+* Introduction
+This is my personal NixOS configuration, split into a modular structure for maintainability. What started as a single massive org-mode file has evolved into a well-organized repository that declares my entire computing landscape.
+
+This represents the *One REPO to Rule Them All*: My complete system configuration is declared right here. This is the power of Nix - declarative, reproducible, and rollback-capable systems management.
+
+[[https://nixos.org/][NixOS]] provides the perfect balance between bleeding-edge software and stable system management. Unlike traditional distributions where configurations get lost over time or drift between machines, NixOS ensures consistency and allows easy rollbacks when things go wrong.
+
+** Quick Setup Guide
+*** For Existing NixOS Systems:
+1. Clone this repository
+2. Backup your current configuration
+3. Copy relevant parts to match this structure
+4. Run: ~sudo nixos-rebuild switch --flake .#hostname~
+
+*** Maintenance Commands:
+- ~sudo nixos-rebuild switch~ - Apply changes
+- ~sudo nixos-rebuild build~ - Build without applying
+- ~nix-collect-garbage -d~ - Clean old generations
+- ~home-manager switch --flake .#hostname~ - Update user config
+
+* Dotfiles
+This directory contains all dotfiles for the programs and tooling I use. I use home-manager's ~mkOutOfStoreSymlink~ to symlink and keep these files organized within this one config - simplification is beautiful. See the section on the home-manager module below.
+
+#+begin_src bash
+❯ tree -d -L 2 dotfiles/
+├── alacritty
+│   └── themes
+├── bat
+│   └── themes
+├── doom
+│   ├── elfeed
+│   ├── images
+│   ├── latex-classes
+│   ├── lisp
+│   ├── sounds
+│   └── themes
+├── fastfetch
+├── kitty
+│   └── themes
+├── mpv
+├── niri
+│   └── configs
+├── noctalia
+├── rmpc
+│   └── themes
+├── starship
+├── tmux
+├── yt-dlp
+├── zathura
+└── zsh
+#+end_src
+
+* Hosts
+** warmachine
+Main desktop/laptop configuration running NixOS 25.11
+- System: x86_64-linux
+- Desktop Environment: KDE
+- Window Manager: Niri (experimental)
+
+* Configuration Structure
+
+** Key Features:
+- Modular architecture with separate directories for hosts, modules, home, dotfiles
+- Home-manager integration for user configuration
+- KDE Plasma desktop with experimental Niri window manager
+- Development environment with Doom Emacs and VS Codium
+- Comprehensive CLI/TUI tools
+- Media applications for music, video, and PDF
+- AI/ML services with Ollama
+- Security modules with GPG/age support
+
+** Installation:
+1. Clone this repository
+2. Copy hardware configuration to hosts/
+3. Edit hostname and user settings as needed
+4. Run: nixos-install --flake .#<hostname>
+5. Reboot and enjoy your declarative system!
+
+* License
+Feel free to use and adapt this configuration for your own needs. While this is my personal setup, the modular structure makes it easy to customize for different requirements.
+
+* Contributing
+This is a personal configuration, but suggestions and improvements are welcome! If you find something that could be optimized or have questions about the setup, feel free to reach out.
