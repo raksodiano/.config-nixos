@@ -22,7 +22,7 @@
 ;; -----------------------------------
 ;; Magit
 ;; -----------------------------------
-(package! magit-delta)
+;; (package! magit-delta)
 (package! glab)
 (package! gtea)
 (package! gogs)
