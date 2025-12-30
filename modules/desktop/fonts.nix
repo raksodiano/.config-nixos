@@ -11,6 +11,7 @@
       nerd-fonts.iosevka-term
       nerd-fonts.iosevka-term-slab
       nerd-fonts.fira-code
+      nerd-fonts.geist-mono
       montserrat
     ];
 
