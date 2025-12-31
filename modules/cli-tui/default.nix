@@ -10,13 +10,13 @@
   # Tools that don't need configuration - just install them
   environment.systemPackages = with pkgs; [
     # Basic CLIs
-    eza              # Better ls
-    zoxide           # Better cd
-    yazi
-    bat              # Better cat
-    fd               # Better find
-    ripgrep-all      # Better grep
-    fzf              # Fuzzy finder
+    eza # Better ls
+    zoxide # Better cd
+    yazi # Better ranger
+    bat # Better cat
+    fd # Better find
+    ripgrep-all # Better grep
+    fzf # Fuzzy finder
     wget
     curl
     killall
@@ -32,14 +32,14 @@
     tree
 
     # Nix workflow
-    nixd  # Nix LSP
-    nh  # nix helper
+    nixd # Nix LSP
+    nh # nix helper
     direnv
     devenv
     nix-output-monitor
 
     # Git tools
-    lazygit          # Git TUI
+    lazygit # Git TUI
 
     # Networking tools
     nmap
@@ -48,18 +48,19 @@
     volta
 
     # Pass
-    # pass
     pwgen
-    (pass-wayland.withExtensions (exts: with exts; [
-      pass-otp
-      pass-import
-      pass-audit
-    ]))
+    (pass-wayland.withExtensions (
+      exts: with exts; [
+        pass-otp
+        pass-import
+        pass-audit
+      ]
+    ))
 
     # System tools
-    btop             # Better top
-    trash-cli        # Safe rm
-    tldr             # Simplified man pages
-    fastfetch        # System info
+    btop # Better top
+    trash-cli # Safe rm
+    tldr # Simplified man pages
+    fastfetch # System info
   ];
 }

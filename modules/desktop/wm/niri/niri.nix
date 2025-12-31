@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  programs.niri.enable = true;
   environment.systemPackages = [ pkgs.niri ];
 
   security.polkit.enable = true;

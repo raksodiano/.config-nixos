@@ -4,6 +4,7 @@
   imports = [
     ./de/kde.nix
     # ./wm/niri
+    # ./wm/hyprland
     ./fonts.nix
     ./audio.nix
     ./bluetooth.nix
