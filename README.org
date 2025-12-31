@@ -1,6 +1,6 @@
 #+title: Raksodiano Nix Configuration
 
-[[https://nixos.org][https://img.shields.io/badge/NixOS-25.11-blue.svg?style=flat-square&logo=NixOS&logoColor=white]]
+[[https://nixos.org][https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white]]
 
 #+BEGIN_QUOTE
 *Disclaimer:* Learning NixOS one configuration at a time. Take this with a grain of salt, but it works for me!
@@ -61,7 +61,7 @@ This directory contains all dotfiles for the programs and tooling I use. I use h
 
 * Hosts
 ** warmachine
-Main desktop/laptop configuration running NixOS 25.11
+Main desktop/laptop configuration running NixOS Unstable
 - System: x86_64-linux
 - Desktop Environment: KDE
 - Window Manager: Niri (experimental)
