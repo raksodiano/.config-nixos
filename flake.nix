@@ -5,7 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nur.url = "github:nix-community/NUR";
-
     home-manager.url = "github:nix-community/home-manager";
 
     noctalia = {

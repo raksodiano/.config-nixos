@@ -47,6 +47,8 @@
     swaynotificationcenter
     kitty
 
+    bibata-cursors
+
     # File managers
     xfce.thunar
     xfce.tumbler

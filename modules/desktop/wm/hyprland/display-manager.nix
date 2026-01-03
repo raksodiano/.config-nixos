@@ -1,11 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  # Enable GDM display manager
-  services.xserver.enable = true;
-
-  services.displayManager.gdm = {
+  services.greetd = {
     enable = true;
-    wayland = true;
+    settings = {
+      default_session = {
+        command = "Hyprland";
+        # user = "raksodiano";
+      };
+    };
   };
 }
