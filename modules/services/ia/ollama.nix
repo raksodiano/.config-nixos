@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   services.ollama = {
-    enable = true;
+    enable = false;
     loadModels = [
       "qwen2.5:0.5b"
       "qwen2.5:1.5b"
