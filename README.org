@@ -1,5 +1,7 @@
 #+title: Raksodiano Nix Configuration
 
+#+HTML: <img src="https://raw.githubusercontent.com/raksodiano/.config-nixos/main/assets/dotfiles-logo.svg" alt="Dotfiles Logo" />
+
 [[https://nixos.org][https://img.shields.io/badge/NixOS-26.05-blue.svg?style=flat-square&logo=NixOS&logoColor=white]]
 
 #+BEGIN_QUOTE
