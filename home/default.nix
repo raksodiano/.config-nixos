@@ -14,6 +14,8 @@
   home.homeDirectory = "/home/raksodiano";
   home.stateVersion = "26.05";
 
+  home.sessionVariables.MESA_GLTHREAD = "true";
+
   programs.home-manager.enable = true;
 
   dconf.settings = {

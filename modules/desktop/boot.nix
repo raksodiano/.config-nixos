@@ -29,6 +29,9 @@
 
   boot.consoleLogLevel = 0;
 
+  # Swappiness
+  boot.kernel.sysctl."vm.swappiness" = 10;
+
   # Fast boot timeout (updated option name)
   boot.loader.timeout = 3;
 

@@ -14,6 +14,8 @@
     config.common.default = "gnome";
   };
 
+  services.gnome.localsearch.enable = false;
+
   environment.gnome.excludePackages = with pkgs; [
     epiphany
     geary
