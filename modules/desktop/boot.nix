@@ -3,7 +3,7 @@
 {
   # Fast, beautiful Plymouth boot with NixOS branding
   boot.plymouth = {
-    enable = false;
+    enable = true;
     theme = "glitch";
     themePackages = with pkgs; [
       # By default we would install all themes
@@ -39,5 +39,5 @@
   boot.loader.systemd-boot.configurationLimit = 10;
 
   # LUKS + Plymouth integration for themed password prompts
-  # boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.enable = true;
 }

@@ -13,14 +13,11 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # Uncomment if you need JACK support
-    # jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # Audio packages
   environment.systemPackages = with pkgs; [
-    # pavucontrol
-    # playerctl
-    # wireplumber
+    playerctl
   ];
 }

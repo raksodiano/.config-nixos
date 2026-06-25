@@ -6,21 +6,26 @@
     enable = true;
     ohMyZsh = {
       enable = true;
-      plugins = [ "git" "sudo" "history" "fzf" ];
-      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "git-prompt"
+        "gitignore"
+        "gnu-utils"
+        "sudo"
+        "history"
+        "fzf"
+        "zsh-navigation-tools"
+        "zsh-interactive-cd"
+      ];
+      theme = "gnzh";
     };
 
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
 
-    # Optional: Add some aliases
-    shellAliases = {
-      ls = "eza";
-      ll = "ls -l";
-      la = "ls -la";
-      cat = "bat";
-      grep = "grep --color=auto";
-    };
+    interactiveShellInit = ''
+      source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    '';
   };
 
   # Set zsh as default shell for user
@@ -29,8 +34,5 @@
   # Install additional tools
   environment.systemPackages = with pkgs; [
     starship  # Modern prompt
-    fzf       # Fuzzy finder
-    fd        # Better find (used by fzf)
-    ripgrep   # Better grep (used by fzf)
   ];
 }

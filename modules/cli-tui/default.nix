@@ -13,7 +13,7 @@
     eza # Better ls
     zoxide # Better cd
     yazi # Better ranger
-    bat # Better cat
+
     fd # Better find
     ripgrep-all # Better grep
     fzf # Fuzzy finder
@@ -22,11 +22,12 @@
     killall
     zip
     unzip
+    p7zip
+    unrar
     jq
     rsync
     borgbackup
     coreutils
-    ydotool
     gnupg
     age
     tree
@@ -61,6 +62,13 @@
     btop # Better top
     trash-cli # Safe rm
     tldr # Simplified man pages
+    bat # Better cat
     fastfetch # System info
+    figlet
+    sl
+
+    # Disk utilities
+    dd_rescue  # Better dd with error recovery
+    pv         # Progress viewer for dd operations
   ];
 }

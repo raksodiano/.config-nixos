@@ -10,7 +10,7 @@
     ../../modules/development
     ../../modules/media
     ../../modules/security
-    ../../modules/services
+    ../../modules/ia
   ];
 
   # Bootloader.
@@ -20,7 +20,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "warmachine"; # Define your hostname.
+  networking.hostName = "Warmachine"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -37,7 +37,7 @@
     LC_NUMERIC = "es_CO.UTF-8";
     LC_PAPER = "es_CO.UTF-8";
     LC_TELEPHONE = "es_CO.UTF-8";
-    LC_TIME = "es_CO.UTF-8";
+    LC_TIME = "en_GB.UTF-8";
   };
 
   # Configure keymap in X11
@@ -59,7 +59,7 @@
       "docker"
     ];
     packages = with pkgs; [
-      kdePackages.kate
+      gnome-text-editor
       #  thunderbird
     ];
   };
@@ -67,14 +67,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
     git
+    home-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -102,6 +100,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 
 }

@@ -33,7 +33,6 @@
         "raksodiano"
       ];
       download-buffer-size = 524288000;
-      auto-optimise-store = true;
       max-jobs = "auto";
     };
 
@@ -45,7 +44,7 @@
     };
 
     optimise = {
-      automatic = true;
+      automatic = false;
       dates = [ "9:00" ];
     };
   };

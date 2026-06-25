@@ -20,29 +20,19 @@
     stylelint
 
     # System utilities
-    curl
-    fd
-    git
     git-crypt
-    ripgrep
-    wget
     wmctrl
     xclip
     xdotool
-    xorg.xprop
-    xorg.xwininfo
+    xprop
+    xwininfo
 
-    # Emacs dependencies
-    emacs-all-the-icons-fonts
-    graphviz
+    # Emacs dependencies (system-level, not duplicated in home.packages)
     hunspell
     hunspellDicts.en_US
     hunspellDicts.es_ES
+    hunspellDicts.es_CO
     hugo
-    imagemagick
-    maim
-    sqlite
-    vips
 
     # Language runtimes
     php

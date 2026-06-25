@@ -22,6 +22,7 @@
 
     gcc
     gh
+    delta
     glibc
     clang
     cmake
@@ -41,5 +42,13 @@
     python3
     python3Packages.pip
     python3Packages.virtualenv
+
+    # Plotting
+    gnuplot
+
+    # Spell checking
+    aspell
+    aspellDicts.en
+    aspellDicts.es
   ];
 }

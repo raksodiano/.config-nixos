@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./keychain.nix
-  ];
-
   # Basic security hardening
   security = {
     sudo.wheelNeedsPassword = true;
@@ -39,5 +35,6 @@
     fail2ban
     gnupg
     age
+    keychain
   ];
 }

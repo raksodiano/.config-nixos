@@ -5,11 +5,13 @@
 
   environment.systemPackages = with pkgs; [
     openttd
-    superTuxKart
+    supertuxkart
     openarena
     assaultcube
     urbanterror
     prismlauncher # Minecraft
     steam
+    retroarch-full
+    xemu
   ];
 }

@@ -20,31 +20,6 @@
       criticalPowerAction = "Hibernate";
     };
 
-    # TLP for battery optimization
-    tlp = {
-      enable = false;
-      settings = {
-        # CPU management
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-        # AMD Ryzen optimizations
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-        # Basic power saving
-        WIFI_PWR_ON_AC = "off";
-        WIFI_PWR_ON_BAT = "on";
-
-        # USB autosuspend
-        USB_AUTOSUSPEND = 1;
-
-        # NVMe power management
-        DISK_DEVICES = "nvme0n1";
-        DISK_APM_LEVEL_ON_BAT = "128";
-      };
-    };
-
     # Thermal management
     thermald.enable = true;
 

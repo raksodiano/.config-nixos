@@ -5,7 +5,7 @@
     # Music players
     mpd
     mpc
-    rmpc
+
     # spotdl
 
     # Audio tools

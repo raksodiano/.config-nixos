@@ -9,10 +9,6 @@
 
   # Common media packages
   environment.systemPackages = with pkgs; [
-    # Image viewers
-    feh
-    imv
-
     # Audio tools
     alsa-utils
   ];

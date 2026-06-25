@@ -42,15 +42,25 @@
         # Performance
         "browser.cache.disk.enable" = false;
         "browser.sessionstore.privacy_level" = 2;
+
+        # File picker nativo (GNOME/KDE)
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+
+        # Aceleración GPU
+        "gfx.webrender.all" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "layers.acceleration.force-enabled" = true;
+
+        # Legacy userChrome/userContent
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+        # Sidebar vertical nativo
+        "sidebar.revamp" = true;
+        "sidebar.verticalTabs" = true;
       };
 
-      # Custom userChrome.css for vertical tabs
+      # Custom userChrome.css with Nord theme
       userChrome = ''
-        /* Hide horizontal tabs when using Tree Style Tab */
-        #TabsToolbar {
-          visibility: collapse !important;
-        }
-
         /* Nord color scheme for Firefox UI */
         :root {
           --nord0: #2e3440;

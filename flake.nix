@@ -2,15 +2,18 @@
   description = "Raksodiano's NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nur.url = "github:nix-community/NUR";
-    home-manager.url = "github:nix-community/home-manager";
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -27,6 +30,11 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/warmachine/configuration.nix
+
+            # Add emacs-overlay to system pkgs
+            {
+              nixpkgs.overlays = [ inputs.emacs-overlay.overlays.default ];
+            }
 
             # Add home-manager
             home-manager.nixosModules.home-manager
