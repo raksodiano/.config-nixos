@@ -21,6 +21,7 @@
   dconf.settings = {
     # Escalado al 100%
     "org/gnome/desktop/interface".scaling-factor = 1;
+    "org/gnome/desktop/interface".enable-animations = false;
     # Tema oscuro
     "org/gnome/desktop/interface".color-scheme = "prefer-dark";
     "org/gnome/desktop/interface".gtk-theme = "Adwaita-dark";
@@ -30,6 +31,8 @@
       "appindicatorsupport@rgcjonas.gmail.com"
       "azwallpaper@azwallpaper.gitlab.com"
     ];
+    # Nautilus ordenar por tipo
+    "org/gnome/nautilus/preferences"."default-sort-order" = "type";
     # Eurkey keyboard layout
     "org/gnome/desktop/input-sources" = {
       show-all-sources = true;

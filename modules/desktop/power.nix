@@ -37,6 +37,6 @@
   # Basic power management
   powerManagement = {
     enable = true;
-    powertop.enable = true;
+    powertop.enable = false;
   };
 }
