@@ -20,11 +20,13 @@
 
   dconf.settings = {
     # Escalado al 100%
-    "org/gnome/desktop/interface".scaling-factor = 1;
-    "org/gnome/desktop/interface".enable-animations = false;
-    # Tema oscuro
-    "org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    "org/gnome/desktop/interface".gtk-theme = "Adwaita-dark";
+    "org/gnome/desktop/interface" = {
+      scaling-factor = 1;
+      enable-animations = false;
+      enable-hot-corners = false;
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+    };
     # Extensiones habilitadas
     "org/gnome/shell".enabled-extensions = [
       "caffeine@patapon.info"

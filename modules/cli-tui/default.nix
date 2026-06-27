@@ -12,7 +12,6 @@
     # Basic CLIs
     eza # Better ls
     zoxide # Better cd
-    yazi # Better ranger
 
     fd # Better find
     ripgrep-all # Better grep
@@ -68,7 +67,7 @@
     sl
 
     # Disk utilities
-    dd_rescue  # Better dd with error recovery
-    pv         # Progress viewer for dd operations
+    dd_rescue # Better dd with error recovery
+    pv # Progress viewer for dd operations
   ];
 }
