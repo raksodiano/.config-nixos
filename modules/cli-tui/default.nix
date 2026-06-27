@@ -5,6 +5,7 @@
     ./zsh.nix
     ./tmux.nix
     ./docker.nix
+    ./virtualisation.nix
   ];
 
   # Tools that don't need configuration - just install them

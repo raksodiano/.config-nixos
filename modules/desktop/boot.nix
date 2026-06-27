@@ -25,12 +25,27 @@
     # Security
     "intel_iommu=on"
     "lockdown=confidentiality"
+    "processor.max_cstate=1"
   ];
 
   boot.consoleLogLevel = 0;
 
-  # Swappiness
+  # Performance tuning
   boot.kernel.sysctl."vm.swappiness" = 10;
+  boot.kernel.sysctl."vm.vfs_cache_pressure" = 50;
+  boot.kernel.sysctl."vm.dirty_ratio" = 10;
+  boot.kernel.sysctl."vm.dirty_background_ratio" = 5;
+  boot.kernel.sysctl."vm.max_map_count" = 1048576;
+
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+  };
+
+  services.earlyoom = {
+    enable = true;
+    extraArgs = [ "--prefer '(?:X|Xorg|gnome-shell|emacs)'" ];
+  };
 
   # Fast boot timeout (updated option name)
   boot.loader.timeout = 3;
