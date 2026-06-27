@@ -33,8 +33,8 @@
     user = "raksodiano";
     dataDir = "/home/raksodiano/.local/share/syncthing";
     configDir = "/home/raksodiano/.config/syncthing";
-    overrideDevices = false;   # gestionar dispositivos desde la Web UI
-    overrideFolders = false;   # gestionar carpetas desde la Web UI
+    overrideDevices = false;   # manage devices from the Web UI
+    overrideFolders = false;   # manage folders from the Web UI
   };
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];

@@ -41,13 +41,13 @@
 \newtoks\leftheader
 \newtoks\leftheaderurl
 \newtoks\coverimage
-% Definir tokens para información personalizada
+% Define tokens for custom information
 \newtoks\customemail
 \newtoks\customconfidential
 \newtoks\customdistribution
 \newtoks\copyrightyear
 
-% Comando para manejar el año del copyright
+% Command to handle copyright year
 \copyrightyear{\number\year}
 
 \hyphenpenalty=5000
@@ -90,25 +90,25 @@
 \node at (0,-8) [opacity=1] {\parbox[b][0.3\textheight]{\textwidth}{%
 \begin{raggedright}
 \vfill
-% Fuerza color azul para todo el bloque
+% Force blue color for entire block
 \color{electricblue}
 
-% Autor (solo si se define)
+% Author only if defined
 \ifdefvoid{\@author}{}{
     {\myauthorfont\Large\bfseries{\@author}}\newline
 }
 
-% Email (solo si se define)
+% Email only if defined
 \ifdefvoid{\the\customemail}{}{
     {\myauthorfont\Large \href{mailto:\the\customemail}{\the\customemail}}\newline
 }
 
-% Confidencial (solo si se define)
+% Confidential only if defined
 \ifdefvoid{\the\customconfidential}{}{
     {\myauthorfont\Large \the\customconfidential}\newline
 }
 
-% Distribución (solo si se define)
+% Distribution only if defined
 \ifdefvoid{\the\customdistribution}{}{
     {\myauthorfont\Large \the\customdistribution}\newline
 }

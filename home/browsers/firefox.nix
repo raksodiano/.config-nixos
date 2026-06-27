@@ -43,10 +43,10 @@
         "browser.cache.disk.enable" = false;
         "browser.sessionstore.privacy_level" = 2;
 
-        # File picker nativo (GNOME/KDE)
+        # Native file picker
         "widget.use-xdg-desktop-portal.file-picker" = 1;
 
-        # Aceleración GPU
+        # GPU acceleration
         "gfx.webrender.all" = true;
         "media.ffmpeg.vaapi.enabled" = true;
         "layers.acceleration.force-enabled" = true;
@@ -54,7 +54,7 @@
         # Legacy userChrome/userContent
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
-        # Sidebar vertical nativo
+        # Native vertical sidebar
         "sidebar.revamp" = true;
         "sidebar.verticalTabs" = true;
       };

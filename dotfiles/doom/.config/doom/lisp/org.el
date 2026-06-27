@@ -241,7 +241,7 @@
 
 (after! ox-latex
     (let ((class-dir (expand-file-name "latex-classes/" doom-user-dir)))
-      ;; Buscar directorios que contengan main.cls (paquetes de clase)
+      ;; Search for directories containing main.cls
       (dolist (entry (directory-files-recursively class-dir ".*" t))
         (when (file-directory-p entry)
           (let ((main-cls (expand-file-name "main.cls" entry)))
@@ -257,7 +257,7 @@
                                      '("\\paragraph{%s}" . "\\paragraph*{%s}")
                                      '("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
                                t)))))))
-      ;; Configurar compilador y añadir latex-classes/ al path de TeX
+      ;; Configure compiler and add latex-classes/ to TeX path
       (setq org-latex-compiler "xelatex"
             org-latex-pdf-process
             (let ((texinputs (concat class-dir ":")))

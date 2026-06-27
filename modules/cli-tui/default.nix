@@ -8,12 +8,12 @@
   ];
 
   # Tools that don't need configuration - just install them
-  # nix-ld: permite ejecutar binarios precompilados no-Nix en NixOS
-  # Necesario para que "volta install pnpm" (y node, npm, etc.) funcionen
+  # nix-ld: allows running precompiled non-Nix binaries on NixOS
+  # Required for "volta install pnpm" and similar tools to work
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      # Librerías base + necesarias para binarios de volta
+      # Base libraries plus dependencies for volta binaries
       stdenv.cc.cc
       openssl
       curl

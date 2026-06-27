@@ -19,7 +19,7 @@
   programs.home-manager.enable = true;
 
   dconf.settings = {
-    # Escalado al 100%
+    # 100% scaling factor
     "org/gnome/desktop/interface" = {
       scaling-factor = 1;
       enable-animations = false;
@@ -27,13 +27,13 @@
       color-scheme = "prefer-dark";
       gtk-theme = "Adwaita-dark";
     };
-    # Extensiones habilitadas
+    # Enabled extensions
     "org/gnome/shell".enabled-extensions = [
       "caffeine@patapon.info"
       "appindicatorsupport@rgcjonas.gmail.com"
       "azwallpaper@azwallpaper.gitlab.com"
     ];
-    # Nautilus ordenar por tipo
+    # Sort by type in Nautilus
     "org/gnome/nautilus/preferences"."default-sort-order" = "type";
     # Eurkey keyboard layout
     "org/gnome/desktop/input-sources" = {

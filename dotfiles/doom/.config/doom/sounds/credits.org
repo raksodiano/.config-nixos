@@ -1,7 +1,7 @@
-Sonidos freedesktop.org - Licencia: CC0 (Public Domain)
+freedesktop.org sounds - License: CC0 (Public Domain)
 https://freedesktop.org/wiki/Specifications/sound-theme-spec
 
-Fuentes:
+Sources:
 - bell.oga
 - dialog-information.oga
 - dialog-warning.oga
