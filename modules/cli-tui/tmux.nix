@@ -10,7 +10,7 @@
       resurrect
       continuum
       yank
-      nord
+      tokyo-night-tmux
       tmux-sessionx
     ];
     extraConfig = ''
@@ -63,7 +63,6 @@
       set -g @continuum-restore 'on'
     '';
   };
-
 
   environment.systemPackages = with pkgs; [
     tmuxifier

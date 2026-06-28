@@ -5,6 +5,7 @@
     ./dotfiles.nix
     ./development/doom.nix
     ./development/vscodium.nix
+    ./development/godot.nix
     ./browsers/firefox.nix
     ./browsers/brave.nix
     ./browsers/librewolf.nix

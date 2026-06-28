@@ -3,6 +3,7 @@
 {
   imports = [
     ./doom.nix
+    ./godot.nix
   ];
 
   # CLI/TUI tools
