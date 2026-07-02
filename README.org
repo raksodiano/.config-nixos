@@ -24,10 +24,9 @@ This represents the *One REPO to Rule Them All*: My complete system configuratio
 4. Run: ~sudo nixos-rebuild switch --flake .#hostname~
 
 *** Maintenance Commands:
-- ~sudo nixos-rebuild switch~ - Apply changes
-- ~sudo nixos-rebuild build~ - Build without applying
+- ~sudo nixos-rebuild switch --flake .#hostname~ - Apply changes
+- ~sudo nixos-rebuild build --flake .#hostname~ - Build without applying
 - ~nix-collect-garbage -d~ - Clean old generations
-- ~home-manager switch --flake .#hostname~ - Update user config
 
 * Dotfiles
 This directory contains all dotfiles for the programs and tooling I use. I use home-manager's ~mkOutOfStoreSymlink~ to symlink and keep these files organized within this one config - simplification is beautiful. See the section on the home-manager module below.
@@ -55,7 +54,7 @@ This directory contains all dotfiles for the programs and tooling I use. I use h
 
 * Hosts
 ** warmachine
-Main desktop/laptop configuration running NixOS 26.05
+Main laptop configuration running NixOS 26.05
 - System: x86_64-linux
 - Desktop Environment: Gnome 50 (Wayland)
 
@@ -75,7 +74,7 @@ Main desktop/laptop configuration running NixOS 26.05
 1. Clone this repository
 2. Copy hardware configuration to hosts/
 3. Edit hostname and user settings as needed
-4. Run: nixos-install --flake .#<hostname>
+4. Run: ~nixos-install --flake .#hostname~
 5. Reboot and enjoy your declarative system!
 
 * License
