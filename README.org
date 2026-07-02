@@ -27,6 +27,7 @@ This represents the *One REPO to Rule Them All*: My complete system configuratio
 - ~sudo nixos-rebuild switch --flake .#hostname~ - Apply changes
 - ~sudo nixos-rebuild build --flake .#hostname~ - Build without applying
 - ~nix-collect-garbage -d~ - Clean old generations
+- ~nix-store --optimise~ - Deduplicate the store (replaces identical files with hard links)
 
 * Dotfiles
 This directory contains all dotfiles for the programs and tooling I use. I use home-manager's ~mkOutOfStoreSymlink~ to symlink and keep these files organized within this one config - simplification is beautiful. See the section on the home-manager module below.
