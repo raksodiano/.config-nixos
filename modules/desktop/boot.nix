@@ -21,11 +21,6 @@
     "rd.systemd.show_status=false"
     "rd.udev.log_level=3"
     "systemd.show_status=auto"
-
-    # Security
-    "intel_iommu=on"
-    "lockdown=confidentiality"
-    "processor.max_cstate=1"
   ];
 
   boot.consoleLogLevel = 0;
@@ -39,7 +34,7 @@
 
   zramSwap = {
     enable = true;
-    memoryPercent = 25;
+    memoryPercent = 50;
   };
 
   services.earlyoom = {
@@ -58,4 +53,7 @@
 
   # LUKS + Plymouth integration for themed password prompts
   boot.initrd.systemd.enable = true;
+
+  # /tmp in RAM (reduce SSD writes, speed up builds)
+  boot.tmp.useTmpfs = true;
 }

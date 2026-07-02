@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -19,6 +19,52 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Hardware-specific kernel parameters (Warmachine: ThinkPad T470, Intel Kaby Lake)
+  boot.kernelParams = [
+    # Security
+    "intel_iommu=on"
+    "lockdown=confidentiality"
+
+    # GPU: i915 power saving + GuC/HuC firmware
+    "i915.enable_psr=1"
+    "i915.enable_dc=2"
+    "i915.enable_rc6=1"
+    "i915.enable_guc=2"
+
+    # CPU: balanced C-states (allows Package C-states for battery life)
+    "processor.max_cstate=4"
+  ];
+
+  # Network tuning (WiFi BBR + large buffers for 32GB RAM)
+  boot.kernel.sysctl."net.ipv4.tcp_congestion_control" = "bbr";
+  boot.kernel.sysctl."net.core.rmem_max" = 134217728;
+  boot.kernel.sysctl."net.core.wmem_max" = 134217728;
+  boot.kernel.sysctl."net.ipv4.tcp_rmem" = "4096 87380 134217728";
+  boot.kernel.sysctl."net.ipv4.tcp_wmem" = "4096 65536 134217728";
+  boot.kernel.sysctl."net.core.default_qdisc" = "fq";
+
+  # GPU: Intel HD Graphics 620 (Kaby Lake) — VA-API + OpenGL
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+      intel-compute-runtime
+    ];
+  };
+
+  # Regular TRIM for SSDs
+  services.fstrim.enable = true;
+
+  # IO scheduler: none for SSDs (no mechanical scheduling needed)
+  services.udev.extraRules = ''
+    # Set scheduler to none for SATA SSDs
+    ACTION=="add|change", KERNEL=="sd*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="none"
+    # Increase read-ahead for SSDs (4MB instead of default 128KB)
+    ACTION=="add|change", KERNEL=="sd*", ATTR{queue/rotational}=="0", ATTR{bdi/read_ahead_kb}="4096"
+  '';
 
   networking.hostName = "Warmachine"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

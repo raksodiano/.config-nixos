@@ -16,6 +16,10 @@
   home.stateVersion = "26.05";
 
   home.sessionVariables.MESA_GLTHREAD = "true";
+  # Experimental: Mesa Iris driver (gallium) for Kaby Lake+
+  # Gives 5-15% more FPS in OpenGL games, but may have bugs on gen9
+  # Uncomment to test:
+  # home.sessionVariables.MESA_LOADER_DRIVER_OVERRIDE = "iris";
 
   programs.home-manager.enable = true;
 

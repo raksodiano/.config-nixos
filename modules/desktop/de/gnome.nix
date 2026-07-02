@@ -15,6 +15,9 @@
   };
 
   services.gnome.localsearch.enable = false;
+  services.gnome.gnome-online-accounts.enable = false;
+  services.gnome.rygel.enable = false;
+  services.gnome.gnome-keyring.enable = lib.mkDefault true;
 
   environment.gnome.excludePackages = with pkgs; [
     epiphany

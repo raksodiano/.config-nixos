@@ -8,9 +8,9 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "i915" ];
+  boot.initrd.kernelModules = [ "i915" ];
+  boot.kernelModules = [ "kvm-intel" "thinkpad_acpi" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
