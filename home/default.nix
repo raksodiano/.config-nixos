@@ -37,7 +37,22 @@
       "caffeine@patapon.info"
       "appindicatorsupport@rgcjonas.gmail.com"
       "azwallpaper@azwallpaper.gitlab.com"
+      "Resource_Monitor@Ory0n"
     ];
+    # Resource Monitor: CPU (usage + temp) + RAM
+    "org/gnome/shell/extensions/resource-monitor" = {
+      cpustatus = true;
+      thermalcputemperaturestatus = true;
+      ramstatus = true;
+      ramunit = "perc";
+      swapstatus = false;
+      diskstatsstatus = false;
+      diskspacestatus = false;
+      netethstatus = false;
+      netwlanstatus = false;
+      gpustatus = false;
+      itemsposition = [ "cpu" "ram" ];
+    };
     # Sort by type in Nautilus
     "org/gnome/nautilus/preferences"."default-sort-order" = "type";
     # Eurkey keyboard layout

@@ -41,6 +41,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.appindicator
     gnomeExtensions.wallpaper-slideshow
+    gnomeExtensions.resource-monitor
   ];
 
   programs.dconf.enable = true;
