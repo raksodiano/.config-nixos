@@ -2,8 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    opencode         # AI coding agent (CLI)
-    opencode-desktop # AI coding agent (Desktop GUI)
-    llama-cpp        # LLM inference engine
+    opencode # AI coding agent (CLI)
+    llama-cpp # LLM inference engine
   ];
 }

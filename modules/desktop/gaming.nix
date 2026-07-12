@@ -12,6 +12,7 @@
     urbanterror
     prismlauncher # Minecraft
     steam
+    mindustry
     retroarch-full
     xemu
   ];
