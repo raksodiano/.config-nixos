@@ -8,6 +8,7 @@
 {
   imports = [
     ./networking.nix
+    ./storages.nix
   ];
 
   # Fix NUR overlay reference
