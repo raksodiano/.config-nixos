@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   bravePrefsFile = "${config.home.homeDirectory}/.config/BraveSoftware/Brave-Browser/Default/Preferences";
@@ -8,10 +13,9 @@ in
     enable = true;
 
     extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm"   # uBlock Origin
-      "nngceckbapebfimnlniiiahkandclblb"    # Bitwarden
-      "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"    # Privacy Badger
-      "bhhldhbndhijheajpkbjhdadjpimahda"    # Decentraleyes
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+      "pkehgijcmpdhfbdbbnkijodmdjhbjlgp" # Privacy Badger
+      "bhhldhbndhijheajpkbjhdadjpimahda" # Decentraleyes
     ];
   };
 
